@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NouName.suck - Генератор Персонажей</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>NouName.suck</h1>
+            <p>Создай идеального персонажа для любой нейронки</p>
+        </header>
+
+        <!-- Landing -->
+        <div id="landing" class="screen">
+            <h2>Добро пожаловать в тест на создание персонажа!</h2>
+            <p>Ответь более чем на 100 вопросов о внешности, характере, лоре и многом другом.</p>
+            <p>В конце получишь гигантский промпт на английском для Midjourney, Stable Diffusion и т.д.</p>
+            <button onclick="startQuiz()">Начать тест</button>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz" class="screen hidden">
+            <div class="progress">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+            <div class="question-container">
+                <h3 id="question-text"></h3>
+                <div id="options" class="options"></div>
+            </div>
+            <div class="navigation">
+                <button id="prev-btn" onclick="prevQuestion()">Назад</button>
+                <button id="next-btn" onclick="nextQuestion()">Далее</button>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div id="results" class="screen hidden">
+            <h2>Твой персонаж готов!</h2>
+            <div id="prompt-output" class="prompt-box"></div>
+            <button onclick="copyPrompt()">Скопировать промпт</button>
+            <button onclick="restartQuiz()">Создать нового</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
